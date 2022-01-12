@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "BBGGG"
-    ]
+    ],
+    "files.exclude": {
+        "**/*.exe": true
+    },
 }
