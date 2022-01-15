@@ -13,7 +13,7 @@ int main()
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
-#endif
+#endif 
     FAST;
     int n, k, ml, l, s, salt, need_ml, needsalt;
     cin >> n >> k >> ml >> l >> s >> salt >> need_ml >> needsalt;
