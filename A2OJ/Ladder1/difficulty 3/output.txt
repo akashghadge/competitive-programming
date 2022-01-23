@@ -1,3 +1,10 @@
-24
-9
-28
+How many numbers ?
+
+Enter the number 
+2 is NOT T-prime
+
+Enter the number 
+5 is NOT T-prime
+
+Enter the number 
+6 is NOT T-prime
