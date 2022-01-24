@@ -40,9 +40,17 @@ int sol(int n)
         cout << 2 << " " << 3 << en;
     }
     int ptr = 1;
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n;)
     {
-        cout << primes[i] * primes[i + 1] << " ";
+        if (i % 2 == 0)
+        {
+            cout << i << en;
+            i++;
+        }
+        else
+        {
+            cout << i * 2 << en;
+        }
     }
     cout << en;
 }
