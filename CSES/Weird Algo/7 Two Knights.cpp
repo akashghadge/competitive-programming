@@ -5,7 +5,7 @@ Input
 
 The only input line contains an integer n.
 
-Output
+Output 
 
 Print n integers: the results.
 
