@@ -5,7 +5,7 @@ using namespace std;
 #define vii vector<vector<long long>>
 #define vll vector<ll>
 #define ll long long
-#define v vector
+#define v vector 
 #define pii pair<long long, long long>
 #define FAST                          \
     ios_base::sync_with_stdio(false); \
