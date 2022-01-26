@@ -24,7 +24,7 @@ int main()
     {
         cout << 0 << en;
     }
-    else if (1 <= n or n <= 9 or n == 1)
+    else if ((1 <= n && n <= 9) or n == 11)
     {
         cout << 4 << en;
     }
