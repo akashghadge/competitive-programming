@@ -10,6 +10,21 @@ using namespace std;
 #define FAST                          \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL);
+void sol(int n, int k, int x)
+{
+    if (k < x)
+    {
+        cout << -1 << en;
+    }
+    else
+    {
+        for (int i = 0; i < n; i++)
+        {
+            cout << i % x << " ";
+        }
+        cout << en;
+    }
+}
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -21,9 +36,9 @@ int main()
     cin >> T;
     while (T--)
     {
-        int n;
-        cin >> n;
-        cout << n - 1 << " " << n << " " << n + 1 << en;
+        int N, K, X;
+        cin >> N >> K >> X;
+        sol(N, K, X);
     }
     return 0;
 }
