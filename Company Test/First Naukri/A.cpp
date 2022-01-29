@@ -46,6 +46,5 @@ int main()
     freopen("output.txt", "w", stdout);
 #endif
     FAST;
-    vector<
     return 0;
 }
