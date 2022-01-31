@@ -11,13 +11,10 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL);
 const int N = 1e5;
-vi height(N, 0);
-vi depth(N, 0);
-
+vi height[N];
 void dfs(int vertex, vii &graph, int par = -1)
 {
     // cout << vertex << en;
-    depth[vertex] = (par == -1) ? 1 : depth[par] + 1;
     int max_height = 0;
     for (auto child : graph[vertex])
     {
@@ -27,6 +24,9 @@ void dfs(int vertex, vii &graph, int par = -1)
         max_height = max(max_height, height[child]);
     }
     height[vertex] = max_height + 1;
+}
+void diameter_tree(int src, vii &graph)
+{
 }
 
 int main()
@@ -46,17 +46,7 @@ int main()
         graph[v1].push_back(v2);
         graph[v2].push_back(v1);
     }
-    dfs(0, graph);
-    cout << "Depth:" << en;
-    for (int i = 0; i < vertex; i++)
-    {
-        cout << i << " " << depth[i] << en;
-    }
-    cout << "Height:" << en;
-    for (int i = 0; i < vertex; i++)
-    {
-        cout << i << " " << height[i] << en;
-    }
+    diameter_tree(0, graph);
 
     return 0;
 }
