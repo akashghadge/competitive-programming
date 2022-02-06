@@ -78,4 +78,7 @@
         "valarray": "cpp",
         "variant": "cpp"
     },
+    "cSpell.enableFiletypes": [
+        "!text"
+    ],
 }
