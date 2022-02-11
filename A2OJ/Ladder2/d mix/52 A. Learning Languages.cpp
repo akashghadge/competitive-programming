@@ -62,6 +62,56 @@ using namespace std;
 #define FAST                          \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL);
+
+void dfs(int src, vii graph, vi &visited)
+{
+    if (visited[src])
+        return;
+    visited[src] = true;
+    for (auto nbr : graph[src])
+    {
+        if (!visited[nbr])
+            dfs(nbr, graph, visited);
+    }
+}
+int connected_comp(vii graph, int n)
+{
+    int ans = 0;
+    vi visited(n);
+    for (int i = 0; i < n; i++)
+    {
+        if (visited[i])
+            continue;
+        dfs(i, graph, visited);
+        ans++;
+    }
+    return ans;
+}
+int sol(vii lang, int n, int m)
+{
+    unordered_map<int, vector<int>> lang_known_by;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < lang[i].size(); j++)
+        {
+            lang_known_by[lang[i][j]].push_back(i);
+        }
+    }
+    vii graph(n);
+    for (auto val : lang_known_by)
+    {
+        // know one knows this lang
+        if (val.second.size() == 0)
+            continue;
+        int first_from_know = val.second[0];
+        for (int i = 1; i < val.second.size(); i++)
+        {
+            graph[first_from_know].push_back(val.second[i]);
+            graph[val.second[i]].push_back(first_from_know);
+        }
+    }
+    return connected_comp(graph, n) - 1;
+}
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -69,6 +119,27 @@ int main()
     freopen("output.txt", "w", stdout);
 #endif
     FAST;
+    int n, m;
+    cin >> n >> m;
+    vii lang(n);
+    int limit_zero = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int limit;
+        cin >> limit;
+        if (limit == 0)
+            limit_zero++;
+        for (int j = 0; j < limit; j++)
+        {
+            int curr;
+            cin >> curr;
+            lang[i].push_back(curr);
+        }
+    }
+    if (limit_zero == n)
+        cout << n << en;
+    else
+        cout << sol(lang, n, m) << en;
 
     return 0;
 }
