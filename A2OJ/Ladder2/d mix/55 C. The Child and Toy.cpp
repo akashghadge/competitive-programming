@@ -61,25 +61,37 @@ In the second sample, the child will spend 400 no matter in what order he will r
 */
 
 #include <bits/stdc++.h>
+
+typedef long long int ll;
+
+#define dbg printf("in\n");
+#define nl printf("\n");
+#define pp pair<int, int>
+#define inf 10000000
+
 using namespace std;
-#define en "\n"
-#define ll long long
-#define v vector
-#define vi vector<int>
-#define vll vector<ll>
-#define vii vector<vector<int>>
-#define pii pair<int, int>
-#define vpi vector<pair<int, int>>
-#define FAST                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);
+
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    FAST;
+    // freopen("in.txt","r",stdin);
+
+    int i, j, k;
+    int n, m;
+    int u, v, sum = 0;
+
+    scanf("%d%d", &n, &m);
+
+    int a[n + 1];
+    for (i = 1; i <= n; i++)
+        scanf("%d", &a[i]);
+
+    for (i = 1; i <= m; i++)
+    {
+        scanf("%d%d", &u, &v);
+        sum += min(a[u], a[v]);
+    }
+
+    cout << sum;
 
     return 0;
 }
