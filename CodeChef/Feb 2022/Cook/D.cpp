@@ -1,36 +1,56 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define en "\n"
-#define ll long long
-#define v vector
-#define vi vector<int>
-#define vll vector<ll>
-#define vii vector<vector<int>>
-#define pii pair<int, int>
-#define vpi vector<pair<int, int>>
-#define FAST                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);
-int main()
+
+#define int long long
+
+int32_t main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    FAST;
     int n, edges;
     cin >> n >> edges;
-    vii graph(n, vi(n));
-    vi price(n);
+
+    int total = n * (n - 1);
+    total /= 2;
+
+    int missing_edges = total - edges;
+
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        sum += x;
+    }
+
     for (int i = 0; i < edges; i++)
     {
-        int u, uv;
-        cin >> u >> uv;
-        graph[u][uv] = true;
-        graph[u][uv] = true;
+        int waste;
+        cin >> waste >> waste;
     }
 
     int q;
     cin >> q;
+
+    while (q--)
+    {
+        char ch;
+        cin >> ch;
+
+        if (ch == '+')
+        {
+            int waste;
+            cin >> waste >> waste;
+            edges++;
+            missing_edges--;
+        }
+        else if (ch == '-')
+        {
+            int waste;
+            cin >> waste >> waste;
+            edges--;
+            missing_edges++;
+        }
+        else
+            cout << sum + edges - missing_edges << "\n";
+    }
     return 0;
 }
