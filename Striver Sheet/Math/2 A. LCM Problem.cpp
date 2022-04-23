@@ -58,7 +58,7 @@ void sol()
         cout << -1 << " " << -1 << en;
     }
 }
-int main()
+int main() 
 {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
