@@ -1,4 +1,6 @@
-99999999
-1
-18
-10
+red
+red
+cyan
+cyan
+cyan
+red
