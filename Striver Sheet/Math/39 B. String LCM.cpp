@@ -37,41 +37,31 @@ In the second test case, "aaaaaa" = "aa" ⋅ 3 = "aaa" ⋅ 2.
 */
 
 #include <bits/stdc++.h>
-using namespace std;
-#define en "\n"
 #define ll long long
-#define v vector
-#define vi vector<int>
-#define vll vector<ll>
-#define vii vector<vector<int>>
-#define pii pair<int, int>
-#define vpi vector<pair<int, int>>
-#define FAST                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);
-/*input sections*/
-string s, t;
-void input()
+using namespace std;
+string check(string s, int k)
 {
-    cin >> s >> t;
+    string r = "";
+    while (k--)
+    {
+        r += s;
+    }
+
+    return r;
 }
-void sol()
-{
-    
-}
+
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    FAST;
-    int T = 1;
-    cin >> T;
-    while (T--)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        input();
-        sol();
+        string s, t;
+        cin >> s >> t;
+        ll g = __gcd(s.length(), t.length());
+        if (check(s, t.length() / g) == check(t, s.length() / g))
+            cout << check(s, t.length() / g) << endl;
+        else
+            cout << -1 << endl;
     }
-    return 0;
 }
