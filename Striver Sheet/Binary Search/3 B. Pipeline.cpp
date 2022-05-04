@@ -33,41 +33,65 @@ outputCopy
 
 */
 
-#include <bits/stdc++.h>
-using namespace std;
-#define en "\n"
-#define ll long long
-#define v vector
-#define vi vector<int>
-#define vll vector<ll>
-#define vii vector<vector<int>>
-#define pii pair<int, int>
-#define vpi vector<pair<int, int>>
-#define FAST                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);
-/*input sections*/
-int n, k;
-void input()
+ll sum(ll n)
 {
-    cin >> n >> k;
+    return (n * (n + 1)) / 2;
 }
-void sol()
+
+// sum: s s+1 s+2 ... e
+ll sum(ll s, ll e)
 {
+    if (s <= 1)
+        return sum(e);
+
+    return sum(e) - sum(s - 1);
 }
+
+ll minSplitters(ll k, ll n)
+{
+    ll st = 1, en = k;
+
+    while (st < en)
+    {
+        ll md = (st + en) / 2;
+        ll s = sum(md, k);
+
+        if (s == n)
+            return k - md + 1;
+
+        if (s > n)
+            st = md + 1;
+        else
+            en = md;
+    }
+
+    return k - st + 2;
+}
+
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("c.in", "rt", stdin);
+    // freopen(".txt", "wt", stdout);
 #endif
-    FAST;
-    int T = 1;
-    cin >> T;
-    while (T--)
+
+    ll n, k;
+    cin >> n >> k;
+
+    if (n == 1)
+        cout << 0 << "\n"; // already just 1 out flow source exist
+    else if (n <= k)
+        cout << 1 << "\n"; // we have 1-n splitter already
+    else
     {
-        input();
-        sol();
+        --k;
+        --n;
+
+        if (sum(k) < n)
+            cout << -1 << "\n";
+        else
+            cout << minSplitters(k, n) << "\n";
     }
+
     return 0;
 }
