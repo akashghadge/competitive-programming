@@ -59,7 +59,7 @@ ll sol()
     {
         if (pow(2, i) > n)
             break;
-        else if (pow(2, i) - 1 == n)
+        else if (pow(2,  i) - 1 == n)
             break;
     }
     return pow(2, i) - 1;
