@@ -94,7 +94,7 @@ int main()
     freopen("output.txt", "w", stdout);
 #endif
     FAST;
-    int T = 1;
+    int T = 1;4 
     // cin >> T;
     while (T--)
     {
