@@ -63,49 +63,76 @@ Let's define bitwise AND (&) as follows. Suppose we have two non-negative intege
 ri={1, if xi=1 and yi=10, if xi=0 or yi=0
 
 */
-
 #include <bits/stdc++.h>
 using namespace std;
-#define en "\n"
-#define ll long long
-#define v vector
-#define vi vector<int>
-#define vll vector<ll>
-#define vii vector<vector<int>>
-#define pii pair<int, int>
-#define vpi vector<pair<int, int>>
-#define FAST                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);
-/*input sections*/
-int n;
-vi arr;
-void input()
+const int N = 200010, mod = 1e9 + 7;
+int T, n, m, a[N], ans[N];
+int f[35];
+
+void pd(int x)
 {
-    cin >> n;
-    arr.resize(n);
-    for (int i = 0; i < n; i++)
+
+    for (int i = 0; i <= 30; i++)
     {
-        cin >> arr[i];
+
+        if (x & (1 << i))
+            f[i]++;
     }
 }
-void sol()
+
+void prim(int x)
 {
-    
+
+    int cnt = 0;
+    for (int i = 1; i <= x / i; i++)
+    {
+
+        if (x % i == 0)
+        {
+
+            ans[++cnt] = i;
+            if (x / i != i)
+                ans[++cnt] = x / i;
+        }
+    }
+    sort(ans + 1, ans + cnt + 1);
+
+    for (int i = 1; i <= cnt; i++)
+        cout << ans[i] << " ";
+    cout << endl;
 }
+
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    FAST;
-    int T = 1;
     cin >> T;
     while (T--)
     {
-        input();
-        sol();
+
+        cin >> n;
+
+        memset(f, 0, sizeof(f));
+        for (int i = 1; i <= n; i++)
+        {
+
+            int x;
+            cin >> x;
+            pd(x);
+        }
+
+        int g;
+        for (int i = 0; i <= 30; i++)
+        {
+
+            if (i == 0)
+                g = f[i];
+            else
+                g = __gcd(g, f[i]);
+        }
+
+        if (!g)
+            for (int i = 1; i <= n; i++)
+                cout << i << " ";
+        prim(g);
     }
     return 0;
 }
