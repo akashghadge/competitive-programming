@@ -54,7 +54,7 @@ void print(deque<string> d)
     cout << en;
 }
 void sol()
-{
+{ 
     deque<string> d;
     for (auto str : strs)
     {
