@@ -1,31 +1,22 @@
+/*
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
-#define en "\n"
-#define ll long long
-#define v vector
-#define vi vector<int>
-#define vll vector<ll>
-#define vii vector<vector<int>>
-#define pii pair<int, int>
-#define vpi vector<pair<int, int>>
-#define FAST                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);
-vector<string> mp={
-    ",@",
-    "ABCabc2",
-    "DEFdef3",
-    "GHIghi4",
-    "JKLjkl5",
-    ""
+void tokenize(string s, string del = " ")
+{
+    int start = 0;
+    int end = s.find(del);
+    while (end != -1)
+    {
+        cout << s.substr(start, end - start) << endl;
+        start = end + del.size();
+        end = s.find(del, start);
+    }
+    cout << s.substr(start, end - start);
 }
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    FAST;
-
-    return 0;
+    string str = "KL Rahul (C), Ruturaj Gaikwad, Ishan Kishan, Deepak Hooda, Shreyas Iyer, Rishabh Pant (wk), Dinesh Karthik (wk), Hardik Pandya, Venkatesh Iyer, Yuzvendra Chahal, Kuldeep Yadav, Axar Patel, Ravi Bishnoi, Bhuvneshwar Kumar, Harshal Patel, Avesh Khan, Arshdeep Singh, Umran Malik.";
+    tokenize(str, ",");
 }
