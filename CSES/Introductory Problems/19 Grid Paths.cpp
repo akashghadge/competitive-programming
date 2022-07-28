@@ -45,7 +45,7 @@ int tryPath(int pathIdx, int curR, int curC) {
 	// reset and return
 	onPath[curR][curC] = false;
 	return ret;
-}
+} 
 
 int main() {
 	string line;
