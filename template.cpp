@@ -1,3 +1,8 @@
+/*
+Notes
+** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
+*/
+
 /*Basic Include */
 #include <bits/stdc++.h>
 using namespace std;
@@ -43,6 +48,7 @@ using namespace __gnu_pbds;
     vi a(n);                   \
     for (ll i = 0; i < n; i++) \
         cin >> a[i];
+
 /* Shortcuts */
 #define pb push_back
 #define mp make_pair
@@ -65,14 +71,10 @@ typedef vector<ii> vii;
 typedef vector<char> vch;
 typedef vector<string> vs;
 
-ostream &operator<<(ostream &out, ii x)
-{
-    out << x.F << " " << x.S << "\n";
-    return out;
-}
+/*ARITHMETIC SECTION*/
 const ll INF = ll(1e18);
 const int mod = 1e9 + 7;
-ll expo(ll x, ll y)
+ll binary_pow(ll x, ll y)
 {
     ll res = 1;
     while (y)
@@ -84,8 +86,8 @@ ll expo(ll x, ll y)
     }
     return res;
 }
-ll inv(ll x) { return expo(x, mod - 2); }
-inline ll ceil(ll a, ll b)
+ll inv(ll x) { return binary_pow(x, mod - 2); }
+inline ll ceil_divide(ll a, ll b)
 {
     if (a % b == 0)
         return a / b;
@@ -93,6 +95,7 @@ inline ll ceil(ll a, ll b)
         return a / b + 1;
 }
 inline ll lcm(ll a, ll b) { return (a * b) / __gcd(a, b); }
+
 bool isPerSquare(ll a)
 {
     if (a < 0)
@@ -100,6 +103,8 @@ bool isPerSquare(ll a)
     ll sr = sqrt(a);
     return (sr * sr == a);
 }
+
+// Modulo Operations
 ll add(ll a, ll b)
 {
     a = a % mod;
@@ -137,6 +142,7 @@ int dy[] = {0, 0, 1, -1};
 #define debug(x)
 #endif
 
+/* Printing Setup*/
 void _print(ll t)
 {
     cerr << t;
@@ -212,8 +218,6 @@ void _print(map<T, V> v)
     cerr << "]";
 }
 
-// ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
-
 void prnv(auto b, auto e)
 {
     for (auto i = b; i != e; i++)
@@ -225,16 +229,21 @@ void prnv(auto b, auto e)
 
 void sol()
 {
+    var(n);
+    prn(n);
 }
 
 int main()
 {
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     FAST();
-    ll tt = 1;
-    cin >> tt;
-    forn(_, 0, tt)
+    ll TEST_CASE = 1;
+    // cin >> TEST_CASE;
+    forn(_, 0, TEST_CASE)
     {
-        // cout<<"Case #"<<(_+1)<<": ";
         sol();
     }
     return 0;
