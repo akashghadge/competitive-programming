@@ -1,22 +1,46 @@
-/*
-
-*/
 #include <bits/stdc++.h>
 using namespace std;
-void tokenize(string s, string del = " ")
+#define en "\n"
+#define ll long long
+#define v vector
+#define vi vector<int>
+#define vll vector<ll>
+#define vii vector<vector<int>>
+#define pii pair<int, int>
+#define vpi vector<pair<int, int>>
+#define FAST                          \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
+/*input sections*/
+int n, m;
+void input()
 {
-    int start = 0;
-    int end = s.find(del);
-    while (end != -1)
+    cin >> n >> m;
+}
+void sol()
+{
+    cout << 64 << en;
+    for (int i = 1; i <= n; i++)
     {
-        cout << s.substr(start, end - start) << endl;
-        start = end + del.size();
-        end = s.find(del, start);
+        for (int j = 1; j <= n; j++)
+        {
+            cout << i << " " << j << en;
+        }
     }
-    cout << s.substr(start, end - start);
 }
 int main()
 {
-    string str = "KL Rahul (C), Ruturaj Gaikwad, Ishan Kishan, Deepak Hooda, Shreyas Iyer, Rishabh Pant (wk), Dinesh Karthik (wk), Hardik Pandya, Venkatesh Iyer, Yuzvendra Chahal, Kuldeep Yadav, Axar Patel, Ravi Bishnoi, Bhuvneshwar Kumar, Harshal Patel, Avesh Khan, Arshdeep Singh, Umran Malik.";
-    tokenize(str, ",");
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "w", stdout);
+    freopen("output.txt", "r", stdin);
+#endif
+    FAST;
+    int T = 1;
+    cin >> T;
+    while (T--)
+    {
+        input();
+        sol();
+    }
+    return 0;
 }
