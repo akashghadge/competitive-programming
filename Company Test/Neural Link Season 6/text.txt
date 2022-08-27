@@ -1,0 +1,11 @@
+1)
+max number after k swaps
+2)
+job scheduling max job possible
+3)
+min inversions after k subset reversal
+4)
+min loss after selling house at any day after buying it easy o(n^2) solution
+5)
+appalling numbers i.e only have factors such as 2,3,5
+eg 1,2,3,4,5,6,8,9
