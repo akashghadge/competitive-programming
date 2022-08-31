@@ -152,15 +152,13 @@ void prnv(auto b, auto e)
 
 void sol()
 {
-    var2(n, m);
-    if (m == 1 and n == 1)
-    {
-        prn(0);
-        return;
-    }
-    if (m > n)
-        swap(m, n);
-    prn((2 * (m - 1)) + n);
+    var(n);
+    vars(str);
+    string temp = "Timur";
+    sort(all(str));
+    sort(all(temp));
+    (temp == str) ? cout << "YES" : cout << "NO";
+    cout << en;
 }
 
 int main()

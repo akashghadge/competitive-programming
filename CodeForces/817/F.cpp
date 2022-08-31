@@ -193,6 +193,8 @@ bool sol()
                 if (i + 1 < n and j - 1 >= 0)
                     curr += dp[i + 1][j - 1];
                 dp[i][j] = curr + 1;
+                if (dp[i][j] > 4)
+                    return false;
             }
         }
     }
