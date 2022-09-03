@@ -7,7 +7,7 @@ int main()
     cin >> n >> k;
     vector<int> arr(n, 0);
     for (int i = 0; i < n; i++)
-        cin >> arr[i];
+        cin >> arr[i]; 
     map<int, int> mp;
     for (int i = 0; i <= k and i < n; i++)
     {
