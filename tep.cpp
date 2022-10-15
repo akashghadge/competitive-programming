@@ -1,46 +1,48 @@
+/*
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
-#define en "\n"
-#define ll long long
-#define v vector
-#define vi vector<int>
-#define vll vector<ll>
-#define vii vector<vector<int>>
-#define pii pair<int, int>
-#define vpi vector<pair<int, int>>
-#define FAST                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);
-/*input sections*/
-int n, m;
-void input()
+vector<int> get(int n)
 {
-    cin >> n >> m;
-}
-void sol()
-{
-    cout << 64 << en;
-    for (int i = 1; i <= n; i++)
+    vector<int> ans(32, 0);
+    int i = 0;
+    while (n)
     {
-        for (int j = 1; j <= n; j++)
-        {
-            cout << i << " " << j << en;
-        }
+        ans[i++] = n & 1;
+        n >>= 1;
     }
+    return ans;
+}
+vector<int> solve(vector<int> arr, int n)
+{
+    vector<int> bit = get(arr[0]), ans;
+    ans.push_back(arr[0]);
+    for (int i = 1; i < n; i++)
+    {
+        vector<int> next(32, 0), curr = get(arr[i]);
+        for (int i = 0; i < 32; i++)
+        {
+            if (bit[i] and curr[i])
+                next[i] = 0;
+            else if (bit[i] or curr[i])
+                next[i] = 1;
+        }
+        int res = 0;
+        for (int i = 0; i < 32; i++)
+            if (next[i])
+                res += pow(2, i);
+        ans.push_back(res);
+        bit = curr;
+    }
+    return ans;
 }
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "w", stdout);
-    freopen("output.txt", "r", stdin);
-#endif
-    FAST;
-    int T = 1;
-    cin >> T;
-    while (T--)
-    {
-        input();
-        sol();
-    }
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> arr(n, 0);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    vector<int> ans = solve(arr, n);
 }
