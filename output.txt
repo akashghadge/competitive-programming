@@ -1,3 +1,4 @@
-45678 300.0 100.0
-12345 30.0
-45678 300.0
+101 overdue
+102 eligible
+103 1 years left
+104 1 years left

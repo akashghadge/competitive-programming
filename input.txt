@@ -1,15 +1,23 @@
+4
+101
+jhon M
+specialist
+6
+102
+Mitul Barua
+Faculty
+4
+103
+Rosy Borah
+Faculty
+3
+104
+Reza
+Generalist
 2
-12345
-12
-30.0
-10.0
-salary
-45678
-98
-400.0
-200.0
-salary
-45678
-98
-100
-salary
+faculty
+4
+Specialist
+5
+Generalist
+3
