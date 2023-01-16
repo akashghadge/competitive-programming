@@ -1,23 +1,22 @@
-4
-101
-jhon M
-specialist
-6
-102
-Mitul Barua
-Faculty
-4
-103
-Rosy Borah
-Faculty
-3
-104
-Reza
-Generalist
-2
-faculty
-4
-Specialist
 5
-Generalist
-3
+101
+Raman
+50000
+Portrait
+102
+Kamaal
+30000
+Portrait
+103
+Raman
+25600
+Modern
+104
+Preeti
+31000
+landscape
+105
+Sumiran
+50000
+modern
+modern
