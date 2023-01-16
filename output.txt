@@ -1,4 +1,3 @@
-SHAKESPHERE 3
-CHARIES DICKENS 3
-SHERLOCK HOLMES 3
-['othrllo', 'Macbeth', 'Halmet', 'The sign of the four', 'The return of sherlock holmes', 'The adventures of sherlock holmes']
+45678 300.0 100.0
+12345 30.0
+45678 300.0
