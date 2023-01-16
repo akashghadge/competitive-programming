@@ -1,1 +1,4 @@
-5 7 2 3 2
+SHAKESPHERE 3
+CHARIES DICKENS 3
+SHERLOCK HOLMES 3
+['othrllo', 'Macbeth', 'Halmet', 'The sign of the four', 'The return of sherlock holmes', 'The adventures of sherlock holmes']
