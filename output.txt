@@ -1,7 +1,2 @@
-Granted
-Personal : 100000
-Travel : 2000
-Home : 50000
-Programmer 2
-Faculty 0
-Analyst 1
+2700.0
+1700.0
