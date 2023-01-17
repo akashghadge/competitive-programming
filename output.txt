@@ -1,4 +1,1 @@
-15
-Output:
-15
-Rejected
+4
