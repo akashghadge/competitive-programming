@@ -24,7 +24,7 @@ int main()
             h2 = h2 * 131ll + s[j];
             a[n++] = make_pair(h1, h2);
         }
-    }
+    } 
     sort(a, a + n);
     printf("%d\n", (int)(unique(a, a + n) - a));
 }
