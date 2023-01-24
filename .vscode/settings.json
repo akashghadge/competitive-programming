@@ -84,4 +84,5 @@
     "cSpell.words": [
         "mnltfarb"
     ],
+    "java.debug.settings.onBuildFailureProceed": true,
 }
