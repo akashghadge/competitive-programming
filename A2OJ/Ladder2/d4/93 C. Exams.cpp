@@ -155,9 +155,25 @@ void sol()
     var(n);
     varvpi(arr, n);
     sort(arr.begin(), arr.end(), [](ii a, ii b)
-         { return a.first > b.first; });
-    // for (auto val : arr)
-    //     cout << val.first << " " << val.second << endl;
+         { 
+            if(a.first==b.first)
+         {
+            return a.second<b.second;
+         }
+            return a.first < b.first; });
+    int curr = 0;
+    for (auto val : arr)
+    {
+        if (val.second >= curr)
+        {
+            curr = val.second;
+        }
+        else
+        {
+            curr = val.first;
+        }
+    }
+    prn(curr);
 }
 
 int main()
