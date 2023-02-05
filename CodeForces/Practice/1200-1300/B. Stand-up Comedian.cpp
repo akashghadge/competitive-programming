@@ -1,5 +1,6 @@
 /*
 Notes
+just try to formulae things so that answer is straightforward.
 ** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
 */
 
