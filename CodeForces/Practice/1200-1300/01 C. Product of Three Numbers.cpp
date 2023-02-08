@@ -1,4 +1,5 @@
 /*
+for factorization use trail_division method
 Notes
 ** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
 */
