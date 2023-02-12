@@ -160,18 +160,24 @@ bool sol()
     }
     for (int i = n - 2; i >= 0; i--)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < n - 1; j++)
         {
             if (arr[i][j] == '1')
             {
-                if (arr[i + 1][j] == '0' and  (arr[i][j + 1] == '0'))
+                if (arr[i + 1][j] == '0' and (arr[i][j + 1] == '0'))
                     return false;
             }
         }
         for (int j = i; j >= 0; j--)
         {
+            if (arr[i][j] == '1')
+            {
+                if (arr[i + 1][j] == '0' and (arr[i][j + 1] == '0'))
+                    return false;
+            }
         }
     }
+    return true;
 }
 
 int main()
