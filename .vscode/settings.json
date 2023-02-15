@@ -1,23 +1,30 @@
 {
-    "files.exclude": {
-        "**/*.exe": true
-    },
     "files.associations": {
-        "any": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "string": "cpp",
+        "random": "cpp",
         "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "chrono": "cpp",
+        "complex": "cpp",
+        "bitset": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp",
+        "algorithm": "cpp",
+        "any": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
         "*.tcc": "cpp",
-        "bitset": "cpp",
         "cctype": "cpp",
         "cfenv": "cpp",
         "charconv": "cpp",
-        "chrono": "cpp",
         "cinttypes": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
         "codecvt": "cpp",
-        "complex": "cpp",
         "condition_variable": "cpp",
         "csetjmp": "cpp",
         "csignal": "cpp",
@@ -40,33 +47,24 @@
         "unordered_set": "cpp",
         "vector": "cpp",
         "exception": "cpp",
-        "algorithm": "cpp",
         "functional": "cpp",
         "iterator": "cpp",
         "memory": "cpp",
         "memory_resource": "cpp",
         "numeric": "cpp",
         "optional": "cpp",
-        "random": "cpp",
         "ratio": "cpp",
-        "regex": "cpp",
-        "string": "cpp",
-        "string_view": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
         "type_traits": "cpp",
-        "utility": "cpp",
         "fstream": "cpp",
         "future": "cpp",
-        "initializer_list": "cpp",
         "iomanip": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp",
         "istream": "cpp",
         "limits": "cpp",
         "mutex": "cpp",
         "new": "cpp",
-        "ostream": "cpp",
         "scoped_allocator": "cpp",
         "shared_mutex": "cpp",
         "sstream": "cpp",
@@ -75,14 +73,17 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "stdlib.h": "c"
     },
-    "cSpell.enableFiletypes": [
-        "!text"
-    ],
+    "files.exclude": {
+        "**/*.exe": true
+    },
     "cSpell.words": [
-        "mnltfarb"
-    ],
-    "java.debug.settings.onBuildFailureProceed": true,
+        "bccb",
+        "bitonic",
+        "dfss",
+        "fsum"
+    ]
+    
 }
