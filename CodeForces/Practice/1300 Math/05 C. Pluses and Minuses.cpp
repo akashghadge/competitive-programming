@@ -12,17 +12,17 @@ using namespace std;
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 #define ordered_set tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update>
-#define ordered_multiset tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>
+#define ordered_multiset tree<ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update>
 
 /* Functions*/
 #define mset(d, val) memset(d, val, sizeof(d))
 #define setp(x) cout << fixed << setprecision(x)
-#define sz(x) (int)(x).size()
+#define sz(x) (ll)(x).size()
 #define all(x) (x).begin(), (x).end()
 #define endl '\n'
-#define forn(i, a, b) for (int i = (a); i < (b); i++)
-#define forr(i, a, b) for (int i = (a); i >= (b); i--)
-#define fore(i, a, b) for (int i = (a); i <= (b); i++)
+#define forn(i, a, b) for (ll i = (a); i < (b); i++)
+#define forr(i, a, b) for (ll i = (a); i >= (b); i--)
+#define fore(i, a, b) for (ll i = (a); i <= (b); i++)
 #define prn(a) cout << a << endl
 #define prn2(a, b) cout << a << " " << b << endl
 #define prn3(a, b, c) cout << a << " " << b << " " << c << endl
@@ -53,9 +53,9 @@ using namespace __gnu_pbds;
     for (ll i = 0; i < n; i++)     \
         for (ll j = 0; j < m; j++) \
             cin >> arr[i][j];
-#define varvpi(a, n)             \
-    vector<pair<int, int>> a(n); \
-    for (ll i = 0; i < n; i++)   \
+#define varvpi(a, n)           \
+    vector<pair<ll, ll>> a(n); \
+    for (ll i = 0; i < n; i++) \
         cin >> a[i].first >> a[i].second;
 
 /* Shortcuts */
@@ -83,7 +83,7 @@ typedef vector<string> vs;
 
 /*ARITHMETIC SECTION*/
 const ll INF = ll(1e18);
-const int mod = 1e9 + 7;
+const ll mod = 1e9 + 7;
 ll binary_pow(ll x, ll y)
 {
     ll res = 1;
@@ -154,8 +154,8 @@ ll m_div(ll a, ll b)
     b = b % mod;
     return (mul(a, inv(b)) + mod) % mod;
 }
-int dx[] = {1, -1, 0, 0};
-int dy[] = {0, 0, 1, -1};
+ll dx[] = {1, -1, 0, 0};
+ll dy[] = {0, 0, 1, -1};
 void prnv(auto b, auto e)
 {
     for (auto i = b; i != e; i++)
@@ -168,9 +168,9 @@ void prnv(auto b, auto e)
 void sol()
 {
     vars(str);
-    int n = str.size();
-    int curr = 0, mn = 0, res = n;
-    int i = 0;
+    ll n = str.size();
+    ll curr = 0, mn = 0, res = n;
+    ll i = 0;
     for (auto ch : str)
     {
         if (ch == '+')
