@@ -165,8 +165,35 @@ void prnv(auto b, auto e)
     cout << endl;
 }
 
-void sol()
+bool sol()
 {
+    var2(n, k);
+    varvpi(arr, n);
+    int size = 52;
+    vi pre(size, 0);
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i].first <= k and k <= arr[i].second)
+        {
+            pre[arr[i].first] += 1;
+            pre[arr[i].second + 1] += -1;
+        }
+    }
+    for (int i = 1; i < size; i++)
+    {
+        pre[i] += pre[i - 1];
+    }
+    int mx = *max_element(all(pre));
+    int cn = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (mx == pre[i])
+        {
+            cn++;
+        }
+    }
+    return (cn == 1);
+    // prnv(all(pre));
 }
 
 int main()
@@ -177,10 +204,11 @@ int main()
 #endif
     FAST();
     ll TEST_CASE = 1;
-    // cin >> TEST_CASE;
+    cin >> TEST_CASE;
     forn(_, 0, TEST_CASE)
     {
-        sol();
+        sol() ? cout << "YES" : cout << "NO";
+        cout << en;
     }
     return 0;
 }

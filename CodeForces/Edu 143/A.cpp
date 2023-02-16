@@ -164,9 +164,41 @@ void prnv(auto b, auto e)
     }
     cout << endl;
 }
-
-void sol()
+bool valid(string a, string b)
 {
+    bool f = true, e = true;
+    for (int i = 1; i < a.size(); i++)
+    {
+        if (a[i - 1] == a[i])
+            f = false;
+    }
+    for (int i = 1; i < b.size(); i++)
+    {
+        if (b[i - 1] == b[i])
+            e = false;
+    }
+    return (f and e);
+}
+bool sol()
+{
+    var2(n, m);
+    vars(a);
+    vars(b);
+    reverse(all(b));
+    string res = a + b;
+    bool f = 1;
+    for (int i = 1; i < res.size(); i++)
+    {
+        if (res[i - 1] == res[i] and f)
+        {
+            f = 0;
+        }
+        else if (res[i - 1] == res[i])
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 int main()
@@ -177,10 +209,11 @@ int main()
 #endif
     FAST();
     ll TEST_CASE = 1;
-    // cin >> TEST_CASE;
+    cin >> TEST_CASE;
     forn(_, 0, TEST_CASE)
     {
-        sol();
+        sol() ? cout << "YES" : cout << "NO";
+        cout << en;
     }
     return 0;
 }

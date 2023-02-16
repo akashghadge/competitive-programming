@@ -167,6 +167,9 @@ void prnv(auto b, auto e)
 
 void sol()
 {
+    var(n);
+    varv(arr, n);
+    prn(accumulate(all(arr), 0LL));
 }
 
 int main()
