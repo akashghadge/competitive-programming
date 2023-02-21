@@ -1,4 +1,49 @@
 /*
+It is the easy version of the problem. The only difference is that in this version k=3
+.
+
+You are given a positive integer n
+. Find k
+ positive integers a1,a2,…,ak
+, such that:
+
+a1+a2+…+ak=n
+LCM(a1,a2,…,ak)≤n2
+Here LCM
+ is the least common multiple of numbers a1,a2,…,ak
+.
+
+We can show that for given constraints the answer always exists.
+
+Input
+The first line contains a single integer t
+ (1≤t≤104)
+  — the number of test cases.
+
+The only line of each test case contains two integers n
+, k
+ (3≤n≤109
+, k=3
+).
+
+Output
+For each test case print k
+ positive integers a1,a2,…,ak
+, for which all conditions are satisfied.
+
+Example
+inputCopy
+3
+3 3
+8 3
+14 3
+outputCopy
+1 1 1
+4 2 2
+2 6 6
+
+*/
+/*
 Notes
 ** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
 */
@@ -166,27 +211,23 @@ void prnv(auto b, auto e)
 }
 
 /******************************** Main Section Start *********************************/
-/*
-here we at first make preprocessing on array and subtract each index with value
-then we check how many of them are repeating that means they are eligible to make pairs
-*/
+
 void pre_processing() {}
 void sol()
 {
-    var(n);
-    varv(arr, n);
-    for (int i = 0; i < n; i++)
+    var2(n, k);
+    if (n % 2 == 1)
     {
-        arr[i] -= i + 1;
+        prn3(1, n / 2, n / 2);
     }
-    unordered_map<int, int> mp;
-    // prnv(all(arr));
-    for (auto val : arr)
-        mp[val]++;
-    ll ans = 0;
-    for (auto val : mp)
-        ans += (val.second * 1LL * (val.second - 1) / 2);
-    prn(ans);
+    else if ((n / 2) % 2 == 1)
+    {
+        prn3(2, (n - 2) / 2, (n - 2) / 2);
+    }
+    else
+    {
+        prn3(n / 2, n / 4, n / 4);
+    }
 }
 
 /******************************** Main Section End *********************************/

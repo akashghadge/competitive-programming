@@ -1,4 +1,58 @@
 /*
+Baby Badawy's first words were "AND 0 SUM BIG", so he decided to solve the following problem. Given two integers n
+ and k
+, count the number of arrays of length n
+ such that:
+
+all its elements are integers between 0
+ and 2k−1
+ (inclusive);
+the bitwise AND of all its elements is 0
+;
+the sum of its elements is as large as possible.
+Since the answer can be very large, print its remainder when divided by 109+7
+.
+
+Input
+The first line contains an integer t
+ (1≤t≤10
+) — the number of test cases you need to solve.
+
+Each test case consists of a line containing two integers n
+ and k
+ (1≤n≤105
+, 1≤k≤20
+).
+
+Output
+For each test case, print the number of arrays satisfying the conditions. Since the answer can be very large, print its remainder when divided by 109+7
+.
+
+Example
+inputCopy
+2
+2 2
+100000 20
+outputCopy
+4
+226732710
+Note
+In the first example, the 4
+ arrays are:
+
+[3,0]
+,
+[0,3]
+,
+[1,2]
+,
+[2,1]
+.
+
+Codeforces (c) Copyright 2010-2023 Mike Mirzayanov
+
+*/
+/*
 Notes
 ** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
 */
@@ -167,26 +221,19 @@ void prnv(auto b, auto e)
 
 /******************************** Main Section Start *********************************/
 /*
-here we at first make preprocessing on array and subtract each index with value
-then we check how many of them are repeating that means they are eligible to make pairs
+Let's start with an array where every single bit in every single element is 1
+. It clearly doesn't have bitwise-and equal to 0
+, so for each bit, we need to turn it off (make it 0
+) in at least one of the elements. However, we can't turn it off in more than one element, since the sum would then decrease for no reason. So for every bit, we should choose exactly one element and turn it off there. Since there are k
+ bits and n
+ elements, the answer is just nk
+.
 */
 void pre_processing() {}
 void sol()
 {
-    var(n);
-    varv(arr, n);
-    for (int i = 0; i < n; i++)
-    {
-        arr[i] -= i + 1;
-    }
-    unordered_map<int, int> mp;
-    // prnv(all(arr));
-    for (auto val : arr)
-        mp[val]++;
-    ll ans = 0;
-    for (auto val : mp)
-        ans += (val.second * 1LL * (val.second - 1) / 2);
-    prn(ans);
+    var2(n, k);
+    prn(binary_pow(n, k));
 }
 
 /******************************** Main Section End *********************************/
