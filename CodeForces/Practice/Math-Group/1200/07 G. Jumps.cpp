@@ -280,51 +280,28 @@ void prnv(auto b, auto e)
 /******************************** Main Section Start *********************************/
 
 void pre_processing() {}
-void sol()
-{
-    var(n);
-    queue<ii> q;
-    q.push({0, 0});
-    ll k = 1;
-    while (q.size())
-    {
-        queue<ii> next;
-        while (q.size())
-        {
-            auto [x, y] = q.front();
-            q.pop();
-            if (x == n)
-            {
-                prn(y);
-                return;
-            }
-            if (x < n)
-            {
-                next.push({x + k, y + 1});
-            }
-            next.push({x - 1, y + 1});
-        }
-        q = next;
-        k++;
-    }
-    prn("-1");
-}
+void sol() {}
 
 /******************************** Main Section End *********************************/
-
 int main()
 {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    FAST();
-    ll TEST_CASE = 1;
-    cin >> TEST_CASE;
-    pre_processing();
-    forn(_, 0, TEST_CASE)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        sol();
+        int x;
+        cin >> x;
+
+        int steps = 0;
+        while (steps * (steps + 1) < 2 * x)
+            steps++;
+
+        if (steps * (steps + 1) / 2 == x + 1)
+            steps++;
+        cout << steps << endl;
     }
-    return 0;
 }
