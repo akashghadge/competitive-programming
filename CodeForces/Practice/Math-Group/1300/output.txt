@@ -1,1 +1,14 @@
-1
+2 1
+aaabb
+3 1
+aabab
+5 2
+baaba
+5 4
+bbaaa
+2 1
+abb
+3 1
+bab
+15 9
+aaaaabaaaaabaaaaaaaa
