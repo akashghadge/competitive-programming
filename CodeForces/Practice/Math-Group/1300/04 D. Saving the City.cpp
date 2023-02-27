@@ -278,7 +278,7 @@ int main()
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
-#endif
+#endif 
     FAST();
     ll TEST_CASE = 1;
     cin >> TEST_CASE;
