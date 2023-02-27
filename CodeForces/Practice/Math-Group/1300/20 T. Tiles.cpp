@@ -219,7 +219,7 @@ void sol()
 }
 
 /******************************** Main Section End *********************************/
-
+ 
 int main()
 {
 #ifndef ONLINE_JUDGE
