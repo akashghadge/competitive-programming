@@ -21,7 +21,7 @@ using namespace __gnu_cxx;
 #define ub upper_bound
 
 #define rep(x, start, end) for (auto x = (start) - ((start) > (end)); x != (end) - ((start) > (end)); ((start) < (end) ? x++ : x--))
-#define all(x) (x).begin(), (x).end()
+#define all(x) (x).begin(), (x).end() 
 #define sz(x) (int)(x).size()
 
 #define indexed_set tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update>
