@@ -74,7 +74,8 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "rope": "cpp"
     },
     "files.exclude": {
         "**/*.exe": true
