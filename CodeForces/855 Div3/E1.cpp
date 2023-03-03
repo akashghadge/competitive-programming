@@ -173,23 +173,35 @@ void pre_processing() {}
 bool sol()
 {
     var2(n, k);
-    vars(str1);
-    vars(str2);
-    unordered_map<char, vector<int>> a;
-    unordered_map<char, vector<int>> b;
-    for (int i = 0; i < n; i++)
-        a[str1[i]].push_back(i);
-    for (int i = 0; i < n; i++)
-        b[str2[i]].push_back(i);
-
-    for (auto val : a)
+    vars(a);
+    vars(b);
+    string x = a;
+    string y = b;
+    sort(all(x));
+    sort(all(y));
+    if (x != y)
+        return false;
+    else if (a == b)
+        return true;
+    else if (n >= 6)
+        return true;
+    else if (n == 5 and b[2] != a[2])
+        return false;
+    else if (n == 4)
     {
-        if (b.find(val.first) == b.end())
-            return false;
-        if (b[val.first].size() != val.second.size())
-            return false;
+        swap(a[0], a[3]);
+        if (a == b)
+            return true;
+        return false;
     }
-    return true;
+    else if (n <= 3)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 /******************************** Main Section End *********************************/
