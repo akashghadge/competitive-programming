@@ -185,40 +185,41 @@ bool sol()
 {
     var(n);
     n = (n * 2) - 2;
-    // prn(n);
-    vector<string> arr(n);
+    vs arr(n);
     for (int i = 0; i < n; i++)
-    {
         cin >> arr[i];
-    }
-    if (n == 2)
-        return true;
     ll mx = 0;
     for (int i = 0; i < n; i++)
-    {
-        mx = max(mx, ll(arr[i].size()));
-    }
-    vector<string> ends;
-    for (auto val : arr)
-        if (val.size() == mx)
-            ends.push_back(val);
-    string end = ends[0];
-    vs ones;
+        mx = max(ll(arr[i].size()), mx);
+    vs all;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i].size() == 1)
-            ones.push_back(arr[i]);
+        if (mx == arr[i].size())
+            all.push_back(arr[i]);
     }
-    if (end[end.size() - 1] == ones[0][0])
+    string f = all[0];
+    string s = all[1];
+    int i = 0, j = 1;
+    bool flag = 1;
+    while (j < mx)
     {
+        if (f[i] != s[j])
+            flag = 0;
+        i++;
+        j++;
     }
-    else if (end[end.size() - 1] == ones[1][0])
+    string curr = "";
+    if (flag)
     {
+        curr = s[0] + f;
     }
     else
     {
+        curr = f[0] + s;
+        // prn("here");
     }
-    return false;
+    // prn(curr);
+    return isPal(curr);
 }
 
 /******************************** Main Section End *********************************/
