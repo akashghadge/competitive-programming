@@ -59,6 +59,13 @@ Notes
 ** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
 */
 
+/*
+here by solving equation we get the
+c-b=1
+and by this every time when we encounter power of a odd then we can split that thing
+i.e a^2 is odd then (a^2/2) (a^2/2) +1 are b and c resp.
+*/
+
 /*Basic Include */
 #include <bits/stdc++.h>
 using namespace std;
