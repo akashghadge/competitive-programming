@@ -172,25 +172,53 @@ void prnv(auto b, auto e)
 void pre_processing() {}
 void sol()
 {
-    var(n);
-    vector<vii> adj(n);
-    vi wts;
-    for (int i = 0; i < n - 1; i++)
+    ll n;
+    cin >> n;
+    vector<pair<ll, ll>> adj[n + 5];
+    for (ll i = 1; i < n; i++)
     {
-        ll x, y, wt;
-        cin >> x >> y >> wt;
-        wts.push_back(wt);
-        adj[x - 1].push_back({y - 1, wt});
+        ll u, v, w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v, w});
+        adj[v].push_back({u, w});
     }
-    prnv(all(wts));
-    ll x = 0;
-    bool zero = 0;
-    bool rep = 0;
-    ll prev = -1;
-    for (auto wt : wts)
+    vector<ll> pref(n + 5, -1);
+    pref[1] = 0;
+    queue<ll> track;
+    track.push(1);
+    while (!track.empty())
     {
+        auto it = track.front();
+        track.pop();
+        for (auto chld : adj[it])
+        {
+            if (pref[chld.first] == -1)
+            {
+                pref[chld.first] = pref[it] ^ chld.second;
+                track.push(chld.first);
+            }
+        }
     }
-    prn("");
+    map<ll, pair<ll, ll>> use;
+    for (ll i = 1; i <= n; i++)
+    {
+        for (ll j = i + 1; j <= n; j++)
+        {
+            ll now = pref[i] ^ pref[j];
+            if (use.find(now) == use.end())
+            {
+                use[now] = {i, j};
+            }
+            else
+            {
+                auto it = use[now];
+                cout << it.first << " " << it.second << " " << i << " " << j << en;
+                return;
+            }
+        }
+    }
+    cout << "-1\n";
+    return;
 }
 
 /******************************** Main Section End *********************************/
