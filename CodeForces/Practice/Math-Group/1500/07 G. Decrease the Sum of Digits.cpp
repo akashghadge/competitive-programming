@@ -194,7 +194,7 @@ void sol()
     int i = 1;
     int mark = -1;
     ll sum = 0;
-    while (true)
+    while (i < arr.size())
     {
         sum += arr[i];
         if (sum > s)
@@ -210,12 +210,20 @@ void sol()
             }
             break;
         }
+        i++;
     }
-    for (int i = mark; i < arr.size(); i++)
+    if (mark != -1)
+        for (int i = mark; i < arr.size(); i++)
+            arr[i] = 0;
+    reverse(all(arr));
+    ll ans = 0;
+    ll ptr = 1;
+    for (auto val : arr)
     {
-        arr[i] = 0;
+        ans += (val * ptr);
+        ptr *= 10;
     }
-    prnv(all(arr));
+    prn(ans - n);
 }
 
 /******************************** Main Section End *********************************/
