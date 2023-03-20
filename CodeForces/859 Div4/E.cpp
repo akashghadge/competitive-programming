@@ -196,9 +196,7 @@ void sol()
     {
         ll mid = l + (r - l) / 2;
         ll left_curr = pre[mid + 1] - pre[l]; // 2
-        ll right_curr = pre[r + 1] - pre[mid + 1];
         ll left_actual = ask(l, mid);
-        ll right_actual = ask(mid + 1, r);
         if (left_curr != left_actual)
         {
             r = mid;
