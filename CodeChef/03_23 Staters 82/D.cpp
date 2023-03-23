@@ -1,4 +1,7 @@
 /*
+
+*/
+/*
 Notes
 ** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
 */
@@ -173,10 +176,13 @@ void pre_processing() {}
 void sol()
 {
     var4(a, b, c, d);
-    ll ptr = 1;
-    while ((a + ptr) % b != (c + ptr) % d)
-        ptr++;
-    prn(ptr);
+    ll eq = a % b;
+    if ((a + 1) % b == (c + 1) % d)
+        prn(1);
+    else
+    {
+        prn(lcm(b, d) - (a % b));
+    }
 }
 
 /******************************** Main Section End *********************************/
