@@ -172,6 +172,33 @@ void prnv(auto b, auto e)
 void pre_processing() {}
 void sol()
 {
+    vars(str);
+    unordered_map<char, int> mp;
+    for (auto val : str)
+        mp[val]++;
+    if (mp.size() == 4)
+    {
+        prn(4);
+    }
+    else if (mp.size() == 1)
+    {
+        prn(-1);
+    }
+    else if (mp.size() == 3)
+    {
+        prn(4);
+    }
+    else
+    {
+        if (mp[str[0]] == 1 or mp[str[0]] == 3)
+        {
+            prn(6);
+        }
+        else
+        {
+            prn(4);
+        }
+    }
 }
 
 /******************************** Main Section End *********************************/
@@ -184,7 +211,7 @@ int main()
 #endif
     FAST();
     ll TEST_CASE = 1;
-    // cin >> TEST_CASE;
+    cin >> TEST_CASE;
     pre_processing();
     forn(_, 0, TEST_CASE)
     {
