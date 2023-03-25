@@ -169,11 +169,27 @@ void prnv(auto b, auto e)
 
 /******************************** Main Section Start *********************************/
 
+ll phi(ll num)
+{
+    ll res = num;
+    for (ll i = 2; i * i <= num; i++)
+    {
+        if (num % i == 0)
+        {
+            while (num % i == 0)
+                num /= i;
+            res -= res / i;
+        }
+    }
+    if (num > 1)
+        res -= res / num;
+    return res;
+}
 void pre_processing() {}
 void sol()
 {
     var(n);
-    
+    prn(phi(n));
 }
 
 /******************************** Main Section End *********************************/
