@@ -1,4 +1,7 @@
 /*
+trailing zeros always made up of the number of 5 occurs in the factorial
+*/
+/*
 Notes
 ** ASCII of 'a'- 97,'z'- 123,'A'- 65,'Z'- 90,'0'- 48,'9'- 57
 */
