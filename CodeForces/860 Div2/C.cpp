@@ -174,34 +174,25 @@ void sol()
 {
     var(n);
     varvpi(arr, n);
-    ll mn = INT_MAX;
-    ll mn_id = -1;
-    ll lc = 1;
     ll ans = 0;
+    ll lc = 1;
+    ll gd = 0;
     for (int i = 0; i < n; i++)
     {
         if (i == 0)
         {
-            lc = arr[0].second;
-            mn = arr[0].first;
-            mn_id = 0;
+            lc = arr[i].second;
+            gd = arr[i].first * arr[i].second;
             ans++;
         }
         else
         {
-            lc = lcm(arr[i].second, lc);
-            if (mn > arr[i].first)
+            lc = lcm(lc, arr[i].second);
+            gd = __gcd(gd, arr[i].first * arr[i].second);
+            if (gd % lc != 0)
             {
-                mn = arr[i].first;
-                mn_id = i;
-            }
-            ll req = lc / arr[mn_id].second;
-            if (((lc / arr[i].second) % arr[i].first) != 0)
-            {
-                // prn4(i, lc, req, mn);
                 lc = arr[i].second;
-                mn = arr[i].first;
-                mn_id = i;
+                gd = arr[i].first * arr[i].second;
                 ans++;
             }
         }
