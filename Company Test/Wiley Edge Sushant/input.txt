@@ -1,0 +1,8 @@
+7
+apple
+orange
+mango
+banana
+apple
+banana
+water melon
