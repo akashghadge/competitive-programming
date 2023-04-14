@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SmallestVowel",
+            "request": "launch",
+            "mainClass": "SmallestVowel",
+            "projectName": "Competative Programming_8222ac2d"
+        },
+        {
+            "type": "java",
+            "name": "CAnswer",
+            "request": "launch",
+            "mainClass": "CAnswer",
+            "projectName": "Competative Programming_8222ac2d"
+        },
+        {
+            "type": "java",
             "name": "Launch A",
             "request": "launch",
             "mainClass": "A",
