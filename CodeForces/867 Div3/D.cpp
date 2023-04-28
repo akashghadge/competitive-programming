@@ -169,7 +169,7 @@ void prnv(auto b, auto e)
 
 /******************************** Main Section Start *********************************/
 
-void pre_processing() {}
+void pre_processing() {} 
 void sol()
 {
 }
