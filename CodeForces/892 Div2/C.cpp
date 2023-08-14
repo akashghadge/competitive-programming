@@ -207,7 +207,7 @@ void sol()
         }
 
         ans = max(ans, prod - mx);
-    }
+    } 
     prn(ans);
 }
 
