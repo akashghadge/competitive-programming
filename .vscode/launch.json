@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Temp",
+            "request": "launch",
+            "mainClass": "Temp",
+            "projectName": "Competative Programming_8222ac2d"
+        },
+        {
+            "type": "java",
             "name": "SmallestVowel",
             "request": "launch",
             "mainClass": "SmallestVowel",
