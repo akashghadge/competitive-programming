@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PrimeSolution",
+            "request": "launch",
+            "mainClass": "PrimeSolution",
+            "projectName": "Competative Programming_8222ac2d"
+        },
+        {
+            "type": "java",
             "name": "Temp",
             "request": "launch",
             "mainClass": "Temp",
