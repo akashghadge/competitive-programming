@@ -229,7 +229,7 @@ void sol()
     ans += str.substr(n - same, same);
     prn(ans);
 }
-
+ 
 /******************************** Main Section End *********************************/
 
 int main()
