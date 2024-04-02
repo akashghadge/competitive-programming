@@ -1,3 +1,6 @@
-ababab
-01000000000000000000000000
-1
+5
+a
+abcdfdcecba
+abbaxyzyx
+codeforces
+acbba

@@ -1,0 +1,21 @@
+KMP
+
+we are using suffix & prefix of pattern so that if we matched all pattern expect the mismatch
+then pattern should be like 
+pre(can exist of not) + suff 
+
+so then we move pointer from suffix to prefix
+that is 
+
+pre + suff <- pointer
+pre <-pointer + suffix (__Discard)
+
+TIME Complexity:
+But p is decremented. If pattern length is m, is worst case time complexity O(mn)?
+
+No. If you look at the above steps carefully, p was decrement 4 times consecutively after it was matched 4 times. Then p was decremented 2 times after it was matched 2 times. At last it was decremented 1 time after it was matched 1 time.
+
+So basically to have n negative steps, you need n positive steps & n positive steps means you are done traversing through the whole text.
+
+So worst time complexity is n + n = 2n which is O(n).
+

@@ -1,8 +1,5 @@
-1
-1
-2
-2
-3
-3
-a ab b ba bab 
-5
+a
+abcdfdcba
+xyzyx
+s
+abba
