@@ -194,7 +194,7 @@ void sol()
     }
     childs.resize(n);
     help(0, graph);
-    prnv(all(childs));
+    prnv(all(childs)); 
 }
 
 /******************************** Main Section End *********************************/
