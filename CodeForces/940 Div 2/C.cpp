@@ -172,14 +172,8 @@ void prnv(auto b, auto e)
 void pre_processing() {}
 void sol()
 {
-    var(n);
-    vvi g(n);
-    for (int i = 0; i < n - 1; i++)
-    {
-        ll u, v;
-        cin >> u >> v;
-        g[u - 1].push_back(v - 1);
-    }
+    var2(n, k);
+    varvpi(arr, k);
     
 }
 

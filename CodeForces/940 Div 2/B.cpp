@@ -172,15 +172,52 @@ void prnv(auto b, auto e)
 void pre_processing() {}
 void sol()
 {
-    var(n);
-    vvi g(n);
-    for (int i = 0; i < n - 1; i++)
+    var2(n, k);
+    vi ans;
+    if (n == 1)
     {
-        ll u, v;
-        cin >> u >> v;
-        g[u - 1].push_back(v - 1);
+        prn(k);
+        return;
     }
-    
+    else
+    {
+        ll temp = k;
+        ll ptr = 0;
+        bool f = 1;
+        while (temp)
+        {
+            if ((temp & 1) == 0)
+                f = 0;
+            ptr++;
+            temp >>= 1;
+        }
+        if (f == 1) // this 1000000
+        {
+            k--;
+            ans.push_back(1);
+            ans.push_back(k);
+        }
+        else
+        {
+            ptr--;
+            ll res1 = 0;
+            while (ptr)
+            {
+                res1 <<= 1;
+                res1 = res1 | 1;
+                ptr--;
+            }
+            ans.push_back(res1);
+            ans.push_back(k - res1);
+        }
+    }
+    n -= 2;
+    while (n)
+    {
+        ans.push_back(0);
+        n--;
+    }
+    prnv(all(ans));
 }
 
 /******************************** Main Section End *********************************/
@@ -193,7 +230,7 @@ int main()
 #endif
     FAST();
     ll TEST_CASE = 1;
-    // cin >> TEST_CASE;
+    cin >> TEST_CASE;
     pre_processing();
     forn(_, 0, TEST_CASE)
     {

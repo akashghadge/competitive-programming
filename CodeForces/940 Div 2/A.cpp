@@ -173,14 +173,15 @@ void pre_processing() {}
 void sol()
 {
     var(n);
-    vvi g(n);
-    for (int i = 0; i < n - 1; i++)
-    {
-        ll u, v;
-        cin >> u >> v;
-        g[u - 1].push_back(v - 1);
-    }
-    
+    varv(arr, n);
+    unordered_map<ll, ll> mp;
+    for (auto val : arr)
+        mp[val]++;
+    ll ans = 0;
+    for (auto val : mp)
+        while (val.second >= 3)
+            ans++, val.second -= 3;
+    prn(ans);
 }
 
 /******************************** Main Section End *********************************/
@@ -193,7 +194,7 @@ int main()
 #endif
     FAST();
     ll TEST_CASE = 1;
-    // cin >> TEST_CASE;
+    cin >> TEST_CASE;
     pre_processing();
     forn(_, 0, TEST_CASE)
     {
