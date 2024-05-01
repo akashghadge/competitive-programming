@@ -170,14 +170,27 @@ void prnv(auto b, auto e)
 /******************************** Main Section Start *********************************/
 
 void pre_processing() {}
+vi dp;
+ll help(ll n)
+{
+    if (n == 1 or n == 0)
+        return 1;
+    if (dp[n] != -1)
+        return dp[n];
+    ll curr = 0;
+    for (int i = 1; i <= 6; i++)
+    {
+        if (n - i < 0)
+            break;
+        curr = (curr + help(n - i)) % mod;
+    }
+    return dp[n] = curr;
+}
 void sol()
 {
     var(n);
-    varvpi(a, n);
-    var(m);
-    varvpi(b, m);
-    prn(n);
-    prn(m);
+    dp.resize(n + 1, -1);
+    prn(help(n));
 }
 
 /******************************** Main Section End *********************************/
@@ -190,7 +203,7 @@ int main()
 #endif
     FAST();
     ll TEST_CASE = 1;
-    cin >> TEST_CASE;
+    // cin >> TEST_CASE;
     pre_processing();
     forn(_, 0, TEST_CASE)
     {

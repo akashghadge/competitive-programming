@@ -1,0 +1,22 @@
+some times for DP don't take the id as state changing variable instead if we can use every element without any condition on every state just take as k for state change
+
+Example:
+
+ll help(ll id, vi &arr, ll n, ll k, ll curr)
+{
+    if (k == 0)
+        return curr;
+    // we are on the last element
+    if (id == n - 1)
+    {
+        return k % arr[id] == 0 ? curr + (k / arr[id]) : INT_MAX;
+    }
+    ll ans = INT_MAX;
+    ans = min(ans, help(id + 1, arr, n, k, curr));
+    while (k - arr[id] >= 0)
+    {
+        k -= arr[id];
+        ans = min(ans, help(id + 1, arr, n, k, ++curr));
+    }
+    return ans;
+}
