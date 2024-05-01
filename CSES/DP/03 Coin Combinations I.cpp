@@ -165,14 +165,14 @@ void prnv(auto b, auto e)
         cout << *i << " ";
     }
     cout << endl;
-}
+} 
 
 /******************************** Main Section Start *********************************/
 
 void pre_processing() {}
 void sol()
 {
-    
+
 }
 
 /******************************** Main Section End *********************************/
