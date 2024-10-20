@@ -12,7 +12,7 @@ void upd(int &a, int b)
 int t;
 string s;
 
-int main()
+int main() 
 {
     cin >> t;
     for (int tc = 0; tc < t; ++tc)
